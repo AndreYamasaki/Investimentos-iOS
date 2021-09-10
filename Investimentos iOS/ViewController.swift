@@ -17,12 +17,10 @@ class ViewController: UITableViewController {
     ]
     
     let tableViewCell = TableViewCell()
+        
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        tableViewCell.viewCell.layer.borderWidth = 1
-//        tableViewCell.viewCell.layer.borderColor = UIColor.white.cgColor
         
         title = "Moedas"
     }
@@ -42,6 +40,16 @@ class ViewController: UITableViewController {
         cell.viewCell.layer.cornerRadius = 10
         cell.viewCell.clipsToBounds = true
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 }
 
