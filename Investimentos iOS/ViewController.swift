@@ -26,6 +26,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return arrayMoedas.count
     }
     
@@ -38,12 +42,12 @@ class ViewController: UITableViewController {
         cell.viewCell.layer.borderWidth = 1
         cell.viewCell.layer.borderColor = UIColor.white.cgColor
         cell.viewCell.layer.cornerRadius = 10
-        cell.viewCell.clipsToBounds = true
+        cell.viewCell.layer.masksToBounds = true
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 24
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

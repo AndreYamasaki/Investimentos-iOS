@@ -25,23 +25,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRc-zs-Ccv" customClass="TableViewCell" customModule="Investimentos_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="24" y="0.0" width="366" height="63.5"/>
+                                            <rect key="frame" x="43" y="0.0" width="328" height="63.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsM-TB-73Q">
-                                                    <rect key="frame" x="16" y="16" width="148" height="31.5"/>
+                                                    <rect key="frame" x="16" y="16" width="149" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="sZy-DH-Chp"/>
-                                                        <constraint firstAttribute="width" constant="148" id="zXD-0O-cGK"/>
+                                                        <constraint firstAttribute="width" constant="148" id="7bD-Jm-4Ks"/>
+                                                        <constraint firstAttribute="height" constant="31" id="cBk-sf-vpP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-r1-Agt">
-                                                    <rect key="frame" x="219" y="21" width="131" height="22.5"/>
+                                                    <rect key="frame" x="181" y="21" width="131" height="22.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="YwD-jY-ceL"/>
-                                                        <constraint firstAttribute="width" constant="131" id="hAi-qr-pNl"/>
+                                                        <constraint firstAttribute="width" constant="131" id="B6N-uA-nb1"/>
+                                                        <constraint firstAttribute="height" constant="22" id="C7L-XG-Q6o"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,20 +50,20 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="GkD-r1-Agt" firstAttribute="top" secondItem="XRc-zs-Ccv" secondAttribute="top" constant="21" id="37w-PD-Vsv"/>
-                                                <constraint firstAttribute="bottom" secondItem="GkD-r1-Agt" secondAttribute="bottom" constant="20" id="I2W-Wp-rsP"/>
-                                                <constraint firstAttribute="bottom" secondItem="gsM-TB-73Q" secondAttribute="bottom" constant="16" id="MnR-jY-hE9"/>
-                                                <constraint firstAttribute="trailing" secondItem="GkD-r1-Agt" secondAttribute="trailing" constant="16" id="Qke-Xg-zJE"/>
-                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="top" secondItem="XRc-zs-Ccv" secondAttribute="top" constant="16" id="lae-LV-T9L"/>
-                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="leading" secondItem="XRc-zs-Ccv" secondAttribute="leading" constant="16" id="lqN-vT-fDi"/>
+                                                <constraint firstItem="GkD-r1-Agt" firstAttribute="top" secondItem="XRc-zs-Ccv" secondAttribute="top" constant="21" id="84S-mV-8JS"/>
+                                                <constraint firstAttribute="trailing" secondItem="GkD-r1-Agt" secondAttribute="trailing" constant="16" id="DXc-PZ-axc"/>
+                                                <constraint firstItem="GkD-r1-Agt" firstAttribute="leading" secondItem="gsM-TB-73Q" secondAttribute="trailing" constant="16" id="RLX-Bk-kdq"/>
+                                                <constraint firstAttribute="bottom" secondItem="GkD-r1-Agt" secondAttribute="bottom" constant="20" id="UyK-DB-Hsd"/>
+                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="top" secondItem="XRc-zs-Ccv" secondAttribute="top" constant="16" id="lrQ-Hv-dwH"/>
+                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="leading" secondItem="XRc-zs-Ccv" secondAttribute="leading" constant="16" id="nXT-jm-zK6"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="leading" secondItem="AQv-F5-j5V" secondAttribute="leading" constant="24" id="MMm-Rs-Exw"/>
-                                        <constraint firstAttribute="bottom" secondItem="XRc-zs-Ccv" secondAttribute="bottom" id="htc-6r-hAb"/>
-                                        <constraint firstAttribute="trailing" secondItem="XRc-zs-Ccv" secondAttribute="trailing" constant="24" id="kfr-zb-DQw"/>
-                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="top" secondItem="AQv-F5-j5V" secondAttribute="top" id="rSd-IG-iuh"/>
+                                        <constraint firstAttribute="bottom" secondItem="XRc-zs-Ccv" secondAttribute="bottom" id="9n3-GT-YaR"/>
+                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="leading" secondItem="AQv-F5-j5V" secondAttribute="leading" constant="43" id="ILi-25-DX3"/>
+                                        <constraint firstAttribute="trailing" secondItem="XRc-zs-Ccv" secondAttribute="trailing" constant="43" id="baY-Ij-Qwd"/>
+                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="top" secondItem="AQv-F5-j5V" secondAttribute="top" id="g3n-Im-CVc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
