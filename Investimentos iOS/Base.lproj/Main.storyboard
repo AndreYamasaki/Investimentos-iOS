@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xlK-Jj-LD7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="OdR-aE-77S">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="AMT-C3-rSG" customClass="ViewController" customModule="Investimentos_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1UN-01-N5v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" rowHeight="63" id="LN0-9O-diV" customClass="TableViewCell" customModule="Investimentos_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LN0-9O-diV" id="AQv-F5-j5V">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRc-zs-Ccv" customClass="TableViewCell" customModule="Investimentos_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="24" y="0.0" width="366" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsM-TB-73Q">
+                                                    <rect key="frame" x="16" y="16" width="148" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="sZy-DH-Chp"/>
+                                                        <constraint firstAttribute="width" constant="148" id="zXD-0O-cGK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-r1-Agt">
+                                                    <rect key="frame" x="219" y="20.5" width="131" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="YwD-jY-ceL"/>
+                                                        <constraint firstAttribute="width" constant="131" id="hAi-qr-pNl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gsM-TB-73Q" secondAttribute="bottom" constant="16" id="MnR-jY-hE9"/>
+                                                <constraint firstAttribute="trailing" secondItem="GkD-r1-Agt" secondAttribute="trailing" constant="16" id="Qke-Xg-zJE"/>
+                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="top" secondItem="XRc-zs-Ccv" secondAttribute="top" constant="16" id="lae-LV-T9L"/>
+                                                <constraint firstItem="gsM-TB-73Q" firstAttribute="leading" secondItem="XRc-zs-Ccv" secondAttribute="leading" constant="16" id="lqN-vT-fDi"/>
+                                                <constraint firstAttribute="trailing" secondItem="gsM-TB-73Q" secondAttribute="trailing" constant="364" id="p8J-RN-Zdc"/>
+                                                <constraint firstItem="GkD-r1-Agt" firstAttribute="centerY" secondItem="gsM-TB-73Q" secondAttribute="centerY" id="uDl-hm-AwK"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="leading" secondItem="AQv-F5-j5V" secondAttribute="leading" constant="24" id="MMm-Rs-Exw"/>
+                                        <constraint firstItem="XRc-zs-Ccv" firstAttribute="top" secondItem="AQv-F5-j5V" secondAttribute="top" id="SFg-ur-60A"/>
+                                        <constraint firstAttribute="trailing" secondItem="XRc-zs-Ccv" secondAttribute="trailing" constant="24" id="kfr-zb-DQw"/>
+                                        <constraint firstAttribute="bottom" secondItem="XRc-zs-Ccv" secondAttribute="bottom" id="zwx-h9-D8V"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="labelCurrency" destination="gsM-TB-73Q" id="Vx9-W0-X4K"/>
+                                    <outlet property="labelPercent" destination="GkD-r1-Agt" id="NLo-AA-J7J"/>
+                                    <outlet property="viewCell" destination="XRc-zs-Ccv" id="pwb-x6-Y3c"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AMT-C3-rSG" id="Mnj-OH-r98"/>
+                            <outlet property="delegate" destination="AMT-C3-rSG" id="oHn-uM-nnu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZsG-GG-g9f"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Anf-Ju-Vbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="-19.419642857142858"/>
+        </scene>
+        <!--Moedas-->
+        <scene sceneID="MZg-Sg-pQq">
+            <objects>
+                <navigationController title="Moedas" automaticallyAdjustsScrollViewInsets="NO" id="xlK-Jj-LD7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O8Q-7Y-DbS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AMT-C3-rSG" kind="relationship" relationship="rootViewController" id="1EV-D5-dqT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lg9-tq-Qio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378.26086956521743" y="-19.419642857142858"/>
         </scene>
     </scenes>
 </document>
