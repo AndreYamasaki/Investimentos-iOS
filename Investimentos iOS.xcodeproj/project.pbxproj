@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEC1240126EFA48F00452527 /* MoedaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1240026EFA48F00452527 /* MoedaManager.swift */; };
+		CEC1240426EFAA7F00452527 /* MoedaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1240326EFAA7F00452527 /* MoedaData.swift */; };
 		CED306CF26EB9E4D006C4BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */; };
 		CED306D126EB9E4D006C4BFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */; };
 		CED306D326EB9E4D006C4BFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306D226EB9E4D006C4BFE /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEC1240026EFA48F00452527 /* MoedaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaManager.swift; sourceTree = "<group>"; };
+		CEC1240326EFAA7F00452527 /* MoedaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaData.swift; sourceTree = "<group>"; };
 		CED306CB26EB9E4D006C4BFE /* Investimentos iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Investimentos iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */,
 				CED306D226EB9E4D006C4BFE /* ViewController.swift */,
 				CED306E226EBAE07006C4BFE /* TableViewCell.swift */,
+				CEC1240026EFA48F00452527 /* MoedaManager.swift */,
+				CEC1240326EFAA7F00452527 /* MoedaData.swift */,
 				CED306D426EB9E4D006C4BFE /* Main.storyboard */,
 				CED306D726EB9E4F006C4BFE /* Assets.xcassets */,
 				CED306D926EB9E4F006C4BFE /* LaunchScreen.storyboard */,
@@ -144,6 +150,8 @@
 				CED306E326EBAE07006C4BFE /* TableViewCell.swift in Sources */,
 				CED306CF26EB9E4D006C4BFE /* AppDelegate.swift in Sources */,
 				CED306D126EB9E4D006C4BFE /* SceneDelegate.swift in Sources */,
+				CEC1240426EFAA7F00452527 /* MoedaData.swift in Sources */,
+				CEC1240126EFA48F00452527 /* MoedaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
