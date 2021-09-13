@@ -9,8 +9,6 @@ import Foundation
 
 // MARK: - MoedaData
 struct MoedaData: Codable {
-    let by: String
-    let validKey: Bool
     let results: Results
 }
 
@@ -21,8 +19,7 @@ struct Results: Codable {
 
 // MARK: - Currencies
 struct Currencies: Codable {
-    let source: String
-    let usd, eur, gbp, ars, cad, aud, jpy, cny, btc: Price
+    let USD, EUR, GBP, ARS, CAD, AUD, JPY, CNY, BTC: Price
 }
 
 // MARK: - Ars

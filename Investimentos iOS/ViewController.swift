@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, moedaManagerDelegate {
     
     //MARK: - Attributes
     var arrayMoedas = [
@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
     "0,53%", "0%", "1,12%"
     ]
     
+    var moedaModels = [MoedaModel]()
+    
     let tableViewCell = TableViewCell()
         
     var moedaManager = MoedaManager()
@@ -24,8 +26,9 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Moedas"
+        navigationItem.title = "Moedas"
         
+        moedaManager.delegate = self
         moedaManager.performRequest()
     }
     
@@ -35,14 +38,14 @@ class ViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayMoedas.count
+        return moedaModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! TableViewCell
-        cell.labelCurrency.text = arrayMoedas[indexPath.section]
-        cell.labelPercent.text = arrayPorcentagem[indexPath.section]
+        cell.labelCurrency.text = moedaModels[indexPath.section].name
+        cell.labelPercent.text = moedaModels[indexPath.section].variationString
         
         cell.viewCell.layer.borderWidth = 1
         cell.viewCell.layer.borderColor = UIColor.white.cgColor
@@ -62,5 +65,9 @@ class ViewController: UITableViewController {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
+    
+    func passarValores(_ moedaManager: MoedaManager, moedaModel: [MoedaModel]) {
+        
+            self.moedaModels = moedaModel
+    }
 }
-
