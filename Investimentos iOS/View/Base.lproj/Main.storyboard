@@ -97,9 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-b9-vod">
-                                <rect key="frame" x="44" y="106" width="327" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-b9-vod">
+                                <rect key="frame" x="24" y="112" width="366" height="171"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD - Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-Eb-NWN">
                                         <rect key="frame" x="8" y="21" width="295" height="31"/>
@@ -131,50 +130,83 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="xJc-pG-AEq"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saldo disponível: R$ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-Tf-2HY">
-                                <rect key="frame" x="44" y="313" width="327" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo disponível: R$ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-Tf-2HY">
+                                <rect key="frame" x="24" y="315" width="366" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="hJc-9J-XzY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Dollar em caixa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-lR-xdo">
-                                <rect key="frame" x="44" y="356" width="327" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHw-XE-Npx">
-                                <rect key="frame" x="44" y="812" width="151" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHw-XE-Npx">
+                                <rect key="frame" x="24" y="779" width="151" height="43"/>
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.55294117647058827" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="8gr-X3-oTl"/>
+                                    <constraint firstAttribute="width" constant="151" id="ufA-vy-g5J"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
                                 <state key="normal" title="Vender">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-Fd-Jb9">
-                                <rect key="frame" x="243" y="812" width="151" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-Fd-Jb9">
+                                <rect key="frame" x="239" y="779" width="151" height="43"/>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="98v-RS-FHP"/>
+                                    <constraint firstAttribute="width" constant="151" id="faS-GY-hV0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
                                 <state key="normal" title="Comprar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quantidade" borderStyle="roundedRect" placeholder="Quantidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ja3-Am-X9q">
-                                <rect key="frame" x="44" y="431" width="327" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quantidade" borderStyle="roundedRect" placeholder="Quantidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ja3-Am-X9q">
+                                <rect key="frame" x="24" y="417" width="366" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Zn0-k7-fvO"/>
+                                </constraints>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Dollar em caixa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-lR-xdo">
+                                <rect key="frame" x="24" y="366" width="366" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="bne-Uj-f1g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D5J-h7-ZH6"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sPb-lR-xdo" firstAttribute="top" secondItem="KbZ-Tf-2HY" secondAttribute="bottom" constant="24" id="0ie-dj-fkh"/>
+                            <constraint firstItem="dHW-b9-vod" firstAttribute="top" secondItem="D5J-h7-ZH6" secondAttribute="top" constant="24" id="2Nk-lR-BpQ"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="trailing" secondItem="eaV-Fd-Jb9" secondAttribute="trailing" constant="24" id="2Rr-SE-8B7"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="trailing" secondItem="KbZ-Tf-2HY" secondAttribute="trailing" constant="24" id="4CN-o9-OzO"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="trailing" secondItem="sPb-lR-xdo" secondAttribute="trailing" constant="24" id="BQ8-PP-uT6"/>
+                            <constraint firstItem="dHW-b9-vod" firstAttribute="leading" secondItem="D5J-h7-ZH6" secondAttribute="leading" constant="24" id="C3v-8l-F58"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="bottom" secondItem="eaV-Fd-Jb9" secondAttribute="bottom" constant="40" id="I0p-zD-dmZ"/>
+                            <constraint firstItem="KbZ-Tf-2HY" firstAttribute="leading" secondItem="D5J-h7-ZH6" secondAttribute="leading" constant="24" id="Jha-ag-ZV4"/>
+                            <constraint firstItem="ja3-Am-X9q" firstAttribute="leading" secondItem="D5J-h7-ZH6" secondAttribute="leading" constant="24" id="ZVu-O4-zHE"/>
+                            <constraint firstItem="KbZ-Tf-2HY" firstAttribute="top" secondItem="dHW-b9-vod" secondAttribute="bottom" constant="32" id="d5E-WF-hc8"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="bottom" secondItem="YHw-XE-Npx" secondAttribute="bottom" constant="40" id="dSe-WU-pf2"/>
+                            <constraint firstItem="sPb-lR-xdo" firstAttribute="leading" secondItem="D5J-h7-ZH6" secondAttribute="leading" constant="24" id="hk1-Ro-St1"/>
+                            <constraint firstItem="eaV-Fd-Jb9" firstAttribute="leading" secondItem="YHw-XE-Npx" secondAttribute="trailing" constant="64" id="sGg-h9-BiA"/>
+                            <constraint firstItem="ja3-Am-X9q" firstAttribute="top" secondItem="sPb-lR-xdo" secondAttribute="bottom" constant="24" id="tie-Y3-Dxz"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="trailing" secondItem="ja3-Am-X9q" secondAttribute="trailing" constant="24" id="w2u-EO-GeL"/>
+                            <constraint firstItem="D5J-h7-ZH6" firstAttribute="trailing" secondItem="dHW-b9-vod" secondAttribute="trailing" constant="24" id="zMF-x1-EDT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="228-M2-RSZ"/>
                     <connections>
