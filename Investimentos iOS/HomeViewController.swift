@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class HomeViewController: UITableViewController {
     
     //MARK: - Attributes
 //    var arrayMoedas = [
@@ -23,8 +23,6 @@ class ViewController: UITableViewController {
     var arrayName = [String]()
     var arrayVariation = [Double]()
         
-//    var moedaManager = MoedaManager()
-//    var moedaModels = [MoedaModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +79,7 @@ class ViewController: UITableViewController {
                     return
                 }
                 if let safeData = data {
-                    let dataString = String(data: safeData, encoding: .utf8)
+//                    let dataString = String(data: safeData, encoding: .utf8)
 //                    print(dataString as Any)
                     self.parseJSon(safeData)
                 }
