@@ -20,8 +20,7 @@ class HomeViewController: UITableViewController {
     
     let tableViewCell = TableViewCell()
     let baseURL = "https://api.hgbrasil.com/finance"
-    var arrayName = [String]()
-    var arrayVariation = [Double]()
+    var moedas = [Price]()
         
 
     override func viewDidLoad() {
@@ -41,14 +40,14 @@ class HomeViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayName.count
+        return moedas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! TableViewCell
-        cell.labelCurrency.text = arrayName[indexPath.section]
-        cell.labelPercent.text = String(format: "%.2f", arrayVariation[indexPath.section]) + "%"
+        cell.labelCurrency.text = moedas[indexPath.section].name
+        cell.labelPercent.text = String(format: "%.2f", moedas[indexPath.section].variation) + "%"
         
         cell.viewCell.layer.borderWidth = 1
         cell.viewCell.layer.borderColor = UIColor.white.cgColor
@@ -56,6 +55,13 @@ class HomeViewController: UITableViewController {
         cell.viewCell.layer.masksToBounds = true
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: "cambio") as? CambioViewController {
+            vc.moeda = moedas[indexPath.section]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     //espaçamento entre cada sessão
@@ -94,25 +100,16 @@ class HomeViewController: UITableViewController {
         do {
             let decodedData = try decoder.decode(MoedaData.self, from: moedaData)
 //            print(decodedData)
-            arrayName.append(decodedData.results.currencies.ARS.name)
-            arrayName.append(decodedData.results.currencies.AUD.name)
-            arrayName.append(decodedData.results.currencies.BTC.name)
-            arrayName.append(decodedData.results.currencies.CAD.name)
-            arrayName.append(decodedData.results.currencies.CNY.name)
-            arrayName.append(decodedData.results.currencies.EUR.name)
-            arrayName.append(decodedData.results.currencies.GBP.name)
-            arrayName.append(decodedData.results.currencies.JPY.name)
-            arrayName.append(decodedData.results.currencies.USD.name)
             
-            arrayVariation.append(decodedData.results.currencies.ARS.variation)
-            arrayVariation.append(decodedData.results.currencies.AUD.variation)
-            arrayVariation.append(decodedData.results.currencies.BTC.variation)
-            arrayVariation.append(decodedData.results.currencies.CAD.variation)
-            arrayVariation.append(decodedData.results.currencies.CNY.variation)
-            arrayVariation.append(decodedData.results.currencies.EUR.variation)
-            arrayVariation.append(decodedData.results.currencies.GBP.variation)
-            arrayVariation.append(decodedData.results.currencies.JPY.variation)
-            arrayVariation.append(decodedData.results.currencies.USD.variation)
+            moedas.append(decodedData.results.currencies.ARS)
+            moedas.append(decodedData.results.currencies.AUD)
+            moedas.append(decodedData.results.currencies.BTC)
+            moedas.append(decodedData.results.currencies.CAD)
+            moedas.append(decodedData.results.currencies.CNY)
+            moedas.append(decodedData.results.currencies.EUR)
+            moedas.append(decodedData.results.currencies.GBP)
+            moedas.append(decodedData.results.currencies.JPY)
+            moedas.append(decodedData.results.currencies.USD)
             
             
         } catch {

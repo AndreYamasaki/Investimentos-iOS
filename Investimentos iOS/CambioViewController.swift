@@ -23,6 +23,11 @@ class CambioViewController: UIViewController {
     @IBOutlet var venderOutlet: UIButton!
     @IBOutlet var comprarOutlet: UIButton!
     
+    var moeda: Price?
+    
+    var carteira: Double = 1000
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,12 +39,24 @@ class CambioViewController: UIViewController {
         cambioView.layer.cornerRadius = 15
         cambioView.layer.masksToBounds = true
         
-        venderOutlet.layer.cornerRadius = 21.5
+        venderOutlet.layer.cornerRadius = 21
         venderOutlet.layer.masksToBounds = true
         
-        comprarOutlet.layer.cornerRadius = 21.5
+        comprarOutlet.layer.cornerRadius = 21
         comprarOutlet.layer.masksToBounds = true
+        
+        adicionarValores()
         
     }
     
+    func adicionarValores() {
+        guard let moeda = moeda else {return}
+        moedaLabel.text = moeda.name
+        compraLabel.text = "Compra: R$\(moeda.buy)"
+        variacaoLabel.text = String(moeda.variation) + "%"
+        if let venda = moeda.sell {
+            vendaLabel.text = "Vendaaa: R$\(venda)"
+        }
+
+    }
 }

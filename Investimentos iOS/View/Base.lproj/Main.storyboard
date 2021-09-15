@@ -74,7 +74,6 @@
                                     <outlet property="labelCurrency" destination="gsM-TB-73Q" id="Vx9-W0-X4K"/>
                                     <outlet property="labelPercent" destination="GkD-r1-Agt" id="NLo-AA-J7J"/>
                                     <outlet property="viewCell" destination="XRc-zs-Ccv" id="pwb-x6-Y3c"/>
-                                    <segue destination="VCE-wm-1Fv" kind="show" id="i1i-PB-6RP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,50 +91,55 @@
         <!--Cambio View Controller-->
         <scene sceneID="VbL-BR-vqj">
             <objects>
-                <viewController id="VCE-wm-1Fv" customClass="CambioViewController" customModule="Investimentos_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cambio" id="VCE-wm-1Fv" customClass="CambioViewController" customModule="Investimentos_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3x-G4-Qff">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-b9-vod">
-                                <rect key="frame" x="24" y="112" width="366" height="171"/>
+                                <rect key="frame" x="24" y="68" width="366" height="171"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD - Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-Eb-NWN">
-                                        <rect key="frame" x="8" y="21" width="295" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Compra: R$ 5,175" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-r6-e7o">
-                                        <rect key="frame" x="8" y="94" width="148" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venda: R$5,1608" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5W-xW-ZxK">
-                                        <rect key="frame" x="8" y="123" width="148" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0,53%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLM-3T-fR8">
-                                        <rect key="frame" x="8" y="60" width="295" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                        <color key="textColor" systemColor="systemGreenColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LMZ-E7-2gV">
+                                        <rect key="frame" x="16" y="15" width="334" height="136"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD - Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-Eb-NWN">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,53%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLM-3T-fR8">
+                                                <rect key="frame" x="0.0" y="40" width="334" height="27"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compra: R$ 5,175" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-r6-e7o">
+                                                <rect key="frame" x="0.0" y="77" width="334" height="21.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venda: R$5,1608" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5W-xW-ZxK">
+                                                <rect key="frame" x="0.0" y="108.5" width="334" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LMZ-E7-2gV" secondAttribute="trailing" constant="16" id="Kvl-LC-Vde"/>
+                                    <constraint firstItem="LMZ-E7-2gV" firstAttribute="leading" secondItem="dHW-b9-vod" secondAttribute="leading" constant="16" id="e8O-rh-SGJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="LMZ-E7-2gV" secondAttribute="bottom" constant="20" id="i4G-wO-zUP"/>
+                                    <constraint firstItem="LMZ-E7-2gV" firstAttribute="top" secondItem="dHW-b9-vod" secondAttribute="top" constant="15" id="nAE-VU-laf"/>
                                     <constraint firstAttribute="height" constant="171" id="xJc-pG-AEq"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo disponível: R$ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-Tf-2HY">
-                                <rect key="frame" x="24" y="315" width="366" height="27"/>
+                                <rect key="frame" x="24" y="271" width="366" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="hJc-9J-XzY"/>
                                 </constraints>
@@ -168,7 +172,7 @@
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quantidade" borderStyle="roundedRect" placeholder="Quantidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ja3-Am-X9q">
-                                <rect key="frame" x="24" y="417" width="366" height="54"/>
+                                <rect key="frame" x="24" y="373" width="366" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Zn0-k7-fvO"/>
@@ -178,7 +182,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Dollar em caixa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-lR-xdo">
-                                <rect key="frame" x="24" y="366" width="366" height="27"/>
+                                <rect key="frame" x="24" y="322" width="366" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="bne-Uj-f1g"/>
                                 </constraints>
