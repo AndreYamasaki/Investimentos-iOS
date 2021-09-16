@@ -34,7 +34,7 @@ class HomeViewController: UITableViewController {
 //        moedaManager.performRequest()
     }
     
-    //MARK: - Methods
+    //MARK: - TablewView DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -48,6 +48,12 @@ class HomeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! TableViewCell
         cell.labelCurrency.text = moedas[indexPath.section].name
         cell.labelPercent.text = String(format: "%.2f", moedas[indexPath.section].variation) + "%"
+        
+        if moedas[indexPath.section].variation > 0 {
+            cell.labelPercent.textColor = .green
+        } else if moedas[indexPath.section].variation < 0 {
+            
+        }
         
         cell.viewCell.layer.borderWidth = 1
         cell.viewCell.layer.borderColor = UIColor.white.cgColor
@@ -74,6 +80,8 @@ class HomeViewController: UITableViewController {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
+    
+    //MARK: - Methods
     
     func performRequest() {
         
