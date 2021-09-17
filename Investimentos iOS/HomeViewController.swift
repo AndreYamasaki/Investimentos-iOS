@@ -52,7 +52,9 @@ class HomeViewController: UITableViewController {
         if moedas[indexPath.section].variation > 0 {
             cell.labelPercent.textColor = .green
         } else if moedas[indexPath.section].variation < 0 {
-            
+            cell.labelPercent.textColor = .red
+        } else {
+            cell.labelPercent.textColor = .white
         }
         
         cell.viewCell.layer.borderWidth = 1
@@ -129,20 +131,5 @@ class HomeViewController: UITableViewController {
                 }
     }
     
-//    func passarValores(_ moedaManager: MoedaManager, moedaModel: [MoedaModel]) {
-//        
-//            self.moedaModels = moedaModel
-//    }
-}
 
-//            let usdName = decodedData.results.currencies.USD.name
-//            let usdVariation = decodedData.results.currencies.USD.variation
-//            let eurName = decodedData.results.currencies.EUR.name
-//            let eurVariation = decodedData.results.currencies.EUR.variation
-//            let arsName = decodedData.results.currencies.ARS.name
-//            let arsVariation = decodedData.results.currencies.ARS.variation
-//
-//            let moeda = [MoedaModel(name: usdName, variation: usdVariation),
-//                         MoedaModel(name: eurName, variation: eurVariation),
-//                         MoedaModel(name: arsName, variation: arsVariation)
-//            ]
+}

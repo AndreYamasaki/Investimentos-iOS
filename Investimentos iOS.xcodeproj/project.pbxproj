@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE259F8026F116D400DAD2DC /* CambioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE259F7F26F116D400DAD2DC /* CambioViewController.swift */; };
 		CE595EFC26EFD9500079AE6E /* MoedaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE595EFB26EFD9500079AE6E /* MoedaModel.swift */; };
+		CE7C7B8126F50C830090CC05 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C7B8026F50C830090CC05 /* Usuario.swift */; };
 		CEC1240426EFAA7F00452527 /* MoedaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1240326EFAA7F00452527 /* MoedaData.swift */; };
 		CED306CF26EB9E4D006C4BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */; };
 		CED306D126EB9E4D006C4BFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		CE259F7F26F116D400DAD2DC /* CambioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambioViewController.swift; sourceTree = "<group>"; };
 		CE595EFB26EFD9500079AE6E /* MoedaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaModel.swift; sourceTree = "<group>"; };
+		CE7C7B8026F50C830090CC05 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		CEC1240326EFAA7F00452527 /* MoedaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaData.swift; sourceTree = "<group>"; };
 		CED306CB26EB9E4D006C4BFE /* Investimentos iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Investimentos iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				CED306D726EB9E4F006C4BFE /* Assets.xcassets */,
 				CED306D926EB9E4F006C4BFE /* LaunchScreen.storyboard */,
 				CED306DC26EB9E4F006C4BFE /* Info.plist */,
+				CE7C7B8026F50C830090CC05 /* Usuario.swift */,
 			);
 			path = "Investimentos iOS";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7C7B8126F50C830090CC05 /* Usuario.swift in Sources */,
 				CE259F8026F116D400DAD2DC /* CambioViewController.swift in Sources */,
 				CED306D326EB9E4D006C4BFE /* HomeViewController.swift in Sources */,
 				CE595EFC26EFD9500079AE6E /* MoedaModel.swift in Sources */,
