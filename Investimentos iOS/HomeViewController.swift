@@ -21,6 +21,7 @@ class HomeViewController: UITableViewController {
     let tableViewCell = TableViewCell()
     let baseURL = "https://api.hgbrasil.com/finance"
     var moedas = [Price]()
+    let currencyArray = ["ARS", "AUD", "BTC", "CAD", "CNY", "EUR", "GBP", "JPY", "USD"]
         
 
     override func viewDidLoad() {
@@ -46,7 +47,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell", for: indexPath) as! TableViewCell
-        cell.labelCurrency.text = moedas[indexPath.section].name
+        cell.labelCurrency.text = currencyArray[indexPath.section]
         cell.labelPercent.text = String(format: "%.2f", moedas[indexPath.section].variation) + "%"
         
         if moedas[indexPath.section].variation > 0 {
@@ -68,6 +69,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier: "cambio") as? CambioViewController {
             vc.moeda = moedas[indexPath.section]
+            vc.moedas = currencyArray[indexPath.section]
             navigationController?.pushViewController(vc, animated: true)
         }
     }

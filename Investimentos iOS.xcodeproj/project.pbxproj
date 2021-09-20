@@ -83,10 +83,10 @@
 		CED306CD26EB9E4D006C4BFE /* Investimentos iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CE259F7E26F1152F00DAD2DC /* Model */,
-				CE259F7D26F1151F00DAD2DC /* View */,
 				CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */,
 				CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */,
+				CE259F7E26F1152F00DAD2DC /* Model */,
+				CE259F7D26F1151F00DAD2DC /* View */,
 				CED306D226EB9E4D006C4BFE /* HomeViewController.swift */,
 				CE259F7F26F116D400DAD2DC /* CambioViewController.swift */,
 				CED306E226EBAE07006C4BFE /* TableViewCell.swift */,
