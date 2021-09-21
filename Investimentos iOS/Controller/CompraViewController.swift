@@ -12,14 +12,22 @@ class CompraViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var homeButton: UIButton!
     
+    var message: String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        title = "Comprar"
+        
+        homeButton.layer.cornerRadius = 21
+        homeButton.layer.masksToBounds = true
+        
+        label.text = message
     }
 
     @IBAction func homePressed(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

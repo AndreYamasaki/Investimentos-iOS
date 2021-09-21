@@ -101,7 +101,17 @@ class CambioViewController: UIViewController {
         usuario.saldoMoeda[moedas]! -= quantidadeVenda
         saldoLabel.text = "Saldo Disponível: R$\(carteira)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
-//        testarBotaoVenda()
+        
+        if let vc = storyboard?.instantiateViewController(identifier: "venda") as? CompraViewController {
+            
+            vc.message = """
+                Parabéns!
+                Você acabou de vender \(usuario.saldoMoeda[moedas] ?? 0) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorReal)
+                """
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
         testarBotao()
         
     }
@@ -120,7 +130,17 @@ class CambioViewController: UIViewController {
         usuario.saldoMoeda[moedas]! += quantidadeCompra
         saldoLabel.text = "Saldo Disponível: R$\(usuario.saldo)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
-//        testarBotaoVenda()
+        
+        if let vc = storyboard?.instantiateViewController(identifier: "compra") as? CompraViewController {
+            
+            vc.message = """
+                Parabéns!
+                Você acabou de comprar \(usuario.saldoMoeda[moedas] ?? 0) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorReal)
+                """
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
         testarBotao()
     }
     
