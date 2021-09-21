@@ -236,6 +236,110 @@
             </objects>
             <point key="canvasLocation" x="1421.7391304347827" y="-19.419642857142858"/>
         </scene>
+        <!--Venda View Controller-->
+        <scene sceneID="wor-Id-4l9">
+            <objects>
+                <viewController storyboardIdentifier="venda" id="y9y-O0-SHX" customClass="VendaViewController" customModule="Investimentos_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t0G-TR-3Ca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns! Você acabou de vender 100 US - Dollar, totalizando R$ 516,08" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1D-M1-srt">
+                                <rect key="frame" x="24" y="353" width="366" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="F87-xY-btn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-My-ciC">
+                                <rect key="frame" x="131.5" y="779" width="151" height="43"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="51d-Tq-IX0"/>
+                                    <constraint firstAttribute="height" constant="43" id="rGg-e6-8dy"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="homePressed:" destination="y9y-O0-SHX" eventType="touchUpInside" id="7Fn-qW-jYt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uu5-Jy-3I4"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f1D-M1-srt" firstAttribute="leading" secondItem="Uu5-Jy-3I4" secondAttribute="leading" constant="24" id="CRy-lk-68w"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="D9n-My-ciC" secondAttribute="bottom" constant="40" id="G8G-cV-w5c"/>
+                            <constraint firstItem="f1D-M1-srt" firstAttribute="centerX" secondItem="t0G-TR-3Ca" secondAttribute="centerX" id="kXk-hc-ZlF"/>
+                            <constraint firstItem="Uu5-Jy-3I4" firstAttribute="trailing" secondItem="f1D-M1-srt" secondAttribute="trailing" constant="24" id="lrA-za-rZM"/>
+                            <constraint firstItem="f1D-M1-srt" firstAttribute="centerY" secondItem="t0G-TR-3Ca" secondAttribute="centerY" id="sxd-Md-FCt"/>
+                            <constraint firstItem="D9n-My-ciC" firstAttribute="centerX" secondItem="Uu5-Jy-3I4" secondAttribute="centerX" id="yJ7-do-U4c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="D9n-My-ciC" id="Laa-JJ-d46"/>
+                        <outlet property="label" destination="f1D-M1-srt" id="ToW-iG-Lw4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPN-BP-ShS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571" y="306"/>
+        </scene>
+        <!--Compra View Controller-->
+        <scene sceneID="gck-67-Cc8">
+            <objects>
+                <viewController storyboardIdentifier="compra" id="rUV-TF-pJw" customClass="CompraViewController" customModule="Investimentos_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7b-sB-4eX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns! Você acabou de comprar 100 USD - Dollar, totalizando R$ 516,08" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94D-LN-07H">
+                                <rect key="frame" x="24" y="353" width="366" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="egE-Ja-PVz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRA-xy-Dp6">
+                                <rect key="frame" x="131.5" y="779" width="151" height="43"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.55294117649999996" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="fwV-qo-FaM"/>
+                                    <constraint firstAttribute="width" constant="151" id="qVo-rC-T4u"/>
+                                </constraints>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="homePressed:" destination="rUV-TF-pJw" eventType="touchUpInside" id="Iiv-tp-K1w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jom-n5-KOp"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="LRA-xy-Dp6" secondAttribute="bottom" constant="40" id="CWC-sr-b0T"/>
+                            <constraint firstItem="94D-LN-07H" firstAttribute="leading" secondItem="d7b-sB-4eX" secondAttribute="leading" constant="24" id="Ddo-IS-LuF"/>
+                            <constraint firstItem="94D-LN-07H" firstAttribute="centerY" secondItem="d7b-sB-4eX" secondAttribute="centerY" id="Hdu-cf-mli"/>
+                            <constraint firstItem="LRA-xy-Dp6" firstAttribute="centerX" secondItem="Jom-n5-KOp" secondAttribute="centerX" id="SCC-u5-WGd"/>
+                            <constraint firstItem="94D-LN-07H" firstAttribute="centerX" secondItem="d7b-sB-4eX" secondAttribute="centerX" id="a84-hL-lOi"/>
+                            <constraint firstAttribute="trailing" secondItem="94D-LN-07H" secondAttribute="trailing" constant="24" id="jCj-IF-rBB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="LRA-xy-Dp6" id="NGh-AH-OPe"/>
+                        <outlet property="label" destination="94D-LN-07H" id="XV0-jl-XkO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ED-aQ-8iW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2592.753623188406" y="-384.375"/>
+        </scene>
         <!--Moedas-->
         <scene sceneID="MZg-Sg-pQq">
             <objects>

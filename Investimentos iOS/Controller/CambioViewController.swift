@@ -52,8 +52,8 @@ class CambioViewController: UIViewController {
         comprarOutlet.layer.masksToBounds = true
         
         adicionarValores()
-        testarBotaoCompra()
-        testarBotaoVenda()
+        testarBotao()
+//        testarBotaoVenda()
         
         quantidadeTextField.delegate = self
         
@@ -101,8 +101,8 @@ class CambioViewController: UIViewController {
         usuario.saldoMoeda[moedas]! -= quantidadeVenda
         saldoLabel.text = "Saldo Disponível: R$\(carteira)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
-        testarBotaoVenda()
-        testarBotaoCompra()
+//        testarBotaoVenda()
+        testarBotao()
         
     }
     
@@ -120,14 +120,14 @@ class CambioViewController: UIViewController {
         usuario.saldoMoeda[moedas]! += quantidadeCompra
         saldoLabel.text = "Saldo Disponível: R$\(usuario.saldo)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
-        testarBotaoVenda()
-        testarBotaoCompra()
+//        testarBotaoVenda()
+        testarBotao()
     }
     
     
 
     
-    func testarBotaoCompra() {
+    func testarBotao() {
         
         guard let moedaCompra = moeda?.buy else { return }
         if moedaCompra > usuario.saldo || usuario.saldo == 0 {
@@ -137,9 +137,6 @@ class CambioViewController: UIViewController {
             comprarOutlet.isEnabled = true
             comprarOutlet.alpha = 1
         }
-    }
-    
-    func testarBotaoVenda() {
         
         if usuario.saldoMoeda[moedas!] == 0 {
             venderOutlet.isEnabled = false

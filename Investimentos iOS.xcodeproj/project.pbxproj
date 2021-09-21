@@ -10,6 +10,8 @@
 		CE259F8026F116D400DAD2DC /* CambioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE259F7F26F116D400DAD2DC /* CambioViewController.swift */; };
 		CE595EFC26EFD9500079AE6E /* MoedaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE595EFB26EFD9500079AE6E /* MoedaModel.swift */; };
 		CE7C7B8126F50C830090CC05 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C7B8026F50C830090CC05 /* Usuario.swift */; };
+		CEB8258D26FA6E05007AA8CC /* CompraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8258C26FA6E05007AA8CC /* CompraViewController.swift */; };
+		CEB8259026FA6E48007AA8CC /* VendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8258F26FA6E48007AA8CC /* VendaViewController.swift */; };
 		CEC1240426EFAA7F00452527 /* MoedaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1240326EFAA7F00452527 /* MoedaData.swift */; };
 		CED306CF26EB9E4D006C4BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */; };
 		CED306D126EB9E4D006C4BFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */; };
@@ -24,6 +26,8 @@
 		CE259F7F26F116D400DAD2DC /* CambioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambioViewController.swift; sourceTree = "<group>"; };
 		CE595EFB26EFD9500079AE6E /* MoedaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaModel.swift; sourceTree = "<group>"; };
 		CE7C7B8026F50C830090CC05 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		CEB8258C26FA6E05007AA8CC /* CompraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompraViewController.swift; sourceTree = "<group>"; };
+		CEB8258F26FA6E48007AA8CC /* VendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendaViewController.swift; sourceTree = "<group>"; };
 		CEC1240326EFAA7F00452527 /* MoedaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoedaData.swift; sourceTree = "<group>"; };
 		CED306CB26EB9E4D006C4BFE /* Investimentos iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Investimentos iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CEB8258E26FA6E0C007AA8CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CED306D226EB9E4D006C4BFE /* HomeViewController.swift */,
+				CE259F7F26F116D400DAD2DC /* CambioViewController.swift */,
+				CEB8258C26FA6E05007AA8CC /* CompraViewController.swift */,
+				CEB8258F26FA6E48007AA8CC /* VendaViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CED306C226EB9E4C006C4BFE = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +100,9 @@
 			children = (
 				CED306CE26EB9E4D006C4BFE /* AppDelegate.swift */,
 				CED306D026EB9E4D006C4BFE /* SceneDelegate.swift */,
+				CEB8258E26FA6E0C007AA8CC /* Controller */,
 				CE259F7E26F1152F00DAD2DC /* Model */,
 				CE259F7D26F1151F00DAD2DC /* View */,
-				CED306D226EB9E4D006C4BFE /* HomeViewController.swift */,
-				CE259F7F26F116D400DAD2DC /* CambioViewController.swift */,
 				CED306E226EBAE07006C4BFE /* TableViewCell.swift */,
 				CED306D726EB9E4F006C4BFE /* Assets.xcassets */,
 				CED306D926EB9E4F006C4BFE /* LaunchScreen.storyboard */,
@@ -171,9 +185,11 @@
 				CE7C7B8126F50C830090CC05 /* Usuario.swift in Sources */,
 				CE259F8026F116D400DAD2DC /* CambioViewController.swift in Sources */,
 				CED306D326EB9E4D006C4BFE /* HomeViewController.swift in Sources */,
+				CEB8259026FA6E48007AA8CC /* VendaViewController.swift in Sources */,
 				CE595EFC26EFD9500079AE6E /* MoedaModel.swift in Sources */,
 				CED306E326EBAE07006C4BFE /* TableViewCell.swift in Sources */,
 				CED306CF26EB9E4D006C4BFE /* AppDelegate.swift in Sources */,
+				CEB8258D26FA6E05007AA8CC /* CompraViewController.swift in Sources */,
 				CED306D126EB9E4D006C4BFE /* SceneDelegate.swift in Sources */,
 				CEC1240426EFAA7F00452527 /* MoedaData.swift in Sources */,
 			);
