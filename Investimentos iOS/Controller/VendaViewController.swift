@@ -12,14 +12,21 @@ class VendaViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var homeButton: UIButton!
     
+    var message: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Vender"
+        
+        homeButton.layer.cornerRadius = 21
+        homeButton.layer.masksToBounds = true
 
-        // Do any additional setup after loading the view.
+        label.text = message
     }
     
     @IBAction func homePressed(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }

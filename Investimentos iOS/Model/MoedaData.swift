@@ -19,6 +19,7 @@ struct Results: Codable {
 
 // MARK: - Currencies
 struct Currencies: Codable {
+    let source: String
     let USD, EUR, GBP, ARS, CAD, AUD, JPY, CNY, BTC: Price
 }
 
@@ -28,4 +29,32 @@ struct Price: Codable {
     let buy: Double
     let sell: Double?
     let variation: Double
+    
+    var buyString: String {
+            let buy = buy
+                let NSNumberBuy = NSNumber(value: buy)
+                let formatter = setFormatter()
+                if let result = formatter.string(from: NSNumberBuy) {
+                    return result
+                }
+        return "R$: 0.00"
+        }
+        
+        var sellString: String {
+            if let sell = sell {
+                let NSNumberSell = NSNumber(value: sell)
+                let formatter = setFormatter()
+                if let result = formatter.string(from: NSNumberSell) {
+                    return result
+                }
+            }
+            return "R$0.00"
+        }
+        
+        func setFormatter() -> NumberFormatter {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.currencyCode = "BRL"
+            return formatter
+        }
 }

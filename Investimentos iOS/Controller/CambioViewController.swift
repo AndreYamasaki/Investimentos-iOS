@@ -25,12 +25,12 @@ class CambioViewController: UIViewController {
     @IBOutlet var venderOutlet: UIButton!
     @IBOutlet var comprarOutlet: UIButton!
     
+    let formatter = NumberFormatter()
+    var usuario = Usuario()
     var moeda: Price?
     var quantidade: Double? //pega o valor da textField
-    var carteira: Double = 1000
-    var saldoMoeda: Double = 0
-    var usuario = Usuario()
     var moedas:  String?
+    
     
     
     //MARK: - viewDidLoad
@@ -53,7 +53,6 @@ class CambioViewController: UIViewController {
         
         adicionarValores()
         testarBotao()
-//        testarBotaoVenda()
         
         quantidadeTextField.delegate = self
         
@@ -77,18 +76,19 @@ class CambioViewController: UIViewController {
         guard let moedas = moedas else {return}
         
         moedaLabel.text = moedas + " - " + moeda.name
-        compraLabel.text = "Compra: R$\(moeda.buy)"
+        let moedaCompra = moeda.buyString
+            compraLabel.text = "Compra: \(moedaCompra)"
         variacaoLabel.text = String(moeda.variation) + "%"
-        if let venda = moeda.sell {
-        vendaLabel.text = "Venda: R$\(venda)"
-        }
+        let moedaVenda = moeda.sellString
+        vendaLabel.text = "Venda: R$\(moedaVenda)"
+        
         saldoLabel.text = "Saldo disponível: R$\(usuario.saldo)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaaa"
     }
     
     @IBAction func venderPressed(_ sender: UIButton) {
         
-        
+        textFieldDidEndEditing(quantidadeTextField)
         guard let moedaVenda = moeda?.sell else { return }
         
         guard let quantidadeVenda = quantidade else { return }
@@ -99,10 +99,10 @@ class CambioViewController: UIViewController {
         
         usuario.saldo += valorReal
         usuario.saldoMoeda[moedas]! -= quantidadeVenda
-        saldoLabel.text = "Saldo Disponível: R$\(carteira)"
+        saldoLabel.text = "Saldo Disponível: R$\(usuario.saldo)"
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
         
-        if let vc = storyboard?.instantiateViewController(identifier: "venda") as? CompraViewController {
+        if let vc = storyboard?.instantiateViewController(identifier: "venda") as? VendaViewController {
             
             vc.message = """
                 Parabéns!
@@ -117,6 +117,8 @@ class CambioViewController: UIViewController {
     }
     
     @IBAction func comprarPressed(_ sender: UIButton) {
+        
+        textFieldDidEndEditing(quantidadeTextField)
         
         guard let moedaCompra = moeda?.buy else { return }
         
@@ -150,6 +152,7 @@ class CambioViewController: UIViewController {
     func testarBotao() {
         
         guard let moedaCompra = moeda?.buy else { return }
+        guard let moedaVenda = moeda?.sell else { return }
         if moedaCompra > usuario.saldo || usuario.saldo == 0 {
             comprarOutlet.isEnabled = false
             comprarOutlet.alpha = 0.5
@@ -158,7 +161,7 @@ class CambioViewController: UIViewController {
             comprarOutlet.alpha = 1
         }
         
-        if usuario.saldoMoeda[moedas!] == 0 {
+        if usuario.saldoMoeda[moedas!] == 0 || usuario.saldo < moedaVenda {
             venderOutlet.isEnabled = false
             venderOutlet.alpha = 0.5
         } else {
@@ -184,7 +187,7 @@ extension CambioViewController: UITextFieldDelegate {
         if textField.text != ""{
                     return true
                 } else {
-                    textField.placeholder = "Quantidade"
+                    textField.placeholder = "quantidade"
                     return false
                 }
     }
