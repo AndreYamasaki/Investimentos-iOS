@@ -39,11 +39,9 @@ class CambioViewController: UIViewController {
         
         title = "Câmbio"
         
-        cambioView.layer.borderWidth = 1
-        cambioView.layer.borderColor = UIColor.white.cgColor
-        cambioView.layer.backgroundColor = UIColor.black.cgColor
-        cambioView.layer.cornerRadius = 15
-        cambioView.layer.masksToBounds = true
+        configurarBordaView() //borda branca, arredondada, fundo preto
+        configurartextField() //borda e placeholder cinza, arredondados
+        adicionarValores()
         
         venderOutlet.layer.cornerRadius = 21
         venderOutlet.layer.masksToBounds = true
@@ -51,16 +49,11 @@ class CambioViewController: UIViewController {
         comprarOutlet.layer.cornerRadius = 21
         comprarOutlet.layer.masksToBounds = true
         
-        adicionarValores()
         testarBotao()
         
         quantidadeTextField.delegate = self
         
-        quantidadeTextField.attributedPlaceholder = NSAttributedString(string: "quantidade", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 97, green: 97, blue: 97, alpha: 0.6)])
-        quantidadeTextField.layer.borderWidth = 1
-        quantidadeTextField.layer.borderColor = UIColor(red: 97, green: 97, blue: 97, alpha: 1).cgColor
-        quantidadeTextField.layer.cornerRadius = 10
-        quantidadeTextField.layer.masksToBounds = true
+        
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
          view.addGestureRecognizer(tapGesture)
@@ -77,13 +70,29 @@ class CambioViewController: UIViewController {
         
         moedaLabel.text = moedas + " - " + moeda.name
         let moedaCompra = moeda.buyString
-            compraLabel.text = "Compra: \(moedaCompra)"
+            compraLabel.text = "Compra: " + moedaCompra
         variacaoLabel.text = String(moeda.variation) + "%"
         let moedaVenda = moeda.sellString
-        vendaLabel.text = "Venda: R$\(moedaVenda)"
+        vendaLabel.text = "Venda: " + moedaVenda
         
         saldoLabel.text = "Saldo disponível: R$\(usuario.saldo)"
-        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaaa"
+        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
+    }
+    
+    func configurarBordaView() {
+        cambioView.layer.borderWidth = 1
+        cambioView.layer.borderColor = UIColor.white.cgColor
+        cambioView.layer.backgroundColor = UIColor.black.cgColor
+        cambioView.layer.cornerRadius = 15
+        cambioView.layer.masksToBounds = true
+    }
+    
+    func configurartextField() {
+        quantidadeTextField.attributedPlaceholder = NSAttributedString(string: "quantidade", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 97, green: 97, blue: 97, alpha: 0.6)])
+        quantidadeTextField.layer.borderWidth = 1
+        quantidadeTextField.layer.borderColor = UIColor(red: 97, green: 97, blue: 97, alpha: 1).cgColor
+        quantidadeTextField.layer.cornerRadius = 10
+        quantidadeTextField.layer.masksToBounds = true
     }
     
     @IBAction func venderPressed(_ sender: UIButton) {
@@ -99,19 +108,19 @@ class CambioViewController: UIViewController {
         
         usuario.saldo += valorReal
         usuario.saldoMoeda[moedas]! -= quantidadeVenda
-        saldoLabel.text = "Saldo Disponível: R$\(usuario.saldo)"
-        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
+        saldoLabel.text = "Saldo Disponível: " + usuario.saldoString
+        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
         
         if let vc = storyboard?.instantiateViewController(identifier: "venda") as? VendaViewController {
             
+            let valorString = String(format: "%.2f", valorReal)
             vc.message = """
                 Parabéns!
-                Você acabou de vender \(usuario.saldoMoeda[moedas] ?? 0) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorReal)
+                Você acabou de vender \(quantidadeVenda) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorString)
                 """
             navigationController?.pushViewController(vc, animated: true)
             
         }
-        
         testarBotao()
         
     }
@@ -130,19 +139,19 @@ class CambioViewController: UIViewController {
         
         usuario.saldo -= valorReal
         usuario.saldoMoeda[moedas]! += quantidadeCompra
-        saldoLabel.text = "Saldo Disponível: R$\(usuario.saldo)"
-        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixaoa"
+        saldoLabel.text = "Saldo Disponível: " + usuario.saldoString
+        caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
         
         if let vc = storyboard?.instantiateViewController(identifier: "compra") as? CompraViewController {
             
+            let valorString = String(format: "%.2f", valorReal)
             vc.message = """
                 Parabéns!
-                Você acabou de comprar \(usuario.saldoMoeda[moedas] ?? 0) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorReal)
+                Você acabou de comprar \(quantidadeCompra) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorString)
                 """
             navigationController?.pushViewController(vc, animated: true)
             
         }
-        
         testarBotao()
     }
     

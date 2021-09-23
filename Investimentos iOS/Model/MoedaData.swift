@@ -48,7 +48,7 @@ struct Price: Codable {
                     return result
                 }
             }
-            return "R$0.00"
+            return "Não disponível para venda"
         }
         
         func setFormatter() -> NumberFormatter {
