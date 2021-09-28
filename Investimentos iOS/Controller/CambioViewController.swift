@@ -22,8 +22,8 @@ class CambioViewController: UIViewController {
     
     @IBOutlet var quantidadeTextField: UITextField!
     
-    @IBOutlet var venderOutlet: UIButton!
-    @IBOutlet var comprarOutlet: UIButton!
+    @IBOutlet var venderOutlet: CustomButton!
+    @IBOutlet var comprarOutlet: CustomButton!
     
     let formatter = NumberFormatter()
     var usuario = Usuario()
@@ -43,11 +43,8 @@ class CambioViewController: UIViewController {
         configurartextField() //borda e placeholder cinza, arredondados
         adicionarValores()
         
-        venderOutlet.layer.cornerRadius = 21
-        venderOutlet.layer.masksToBounds = true
-        
-        comprarOutlet.layer.cornerRadius = 21
-        comprarOutlet.layer.masksToBounds = true
+        venderOutlet.setLayer()
+        comprarOutlet.setLayer()
         
         testarBotao()
         
@@ -163,19 +160,15 @@ class CambioViewController: UIViewController {
         guard let moedaCompra = moeda?.buy else { return }
         guard let moedaVenda = moeda?.sell else { return }
         if moedaCompra > usuario.saldo || usuario.saldo == 0 {
-            comprarOutlet.isEnabled = false
-            comprarOutlet.alpha = 0.5
+            comprarOutlet.disableButton()
         } else {
-            comprarOutlet.isEnabled = true
-            comprarOutlet.alpha = 1
+            comprarOutlet.enableButton()
         }
         
         if usuario.saldoMoeda[moedas!] == 0 || usuario.saldo < moedaVenda {
-            venderOutlet.isEnabled = false
-            venderOutlet.alpha = 0.5
+            venderOutlet.disableButton()
         } else {
-            venderOutlet.isEnabled = true
-            venderOutlet.alpha = 1
+            venderOutlet.enableButton()
         }
     }
 }

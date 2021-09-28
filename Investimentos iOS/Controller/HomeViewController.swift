@@ -10,12 +10,6 @@ import UIKit
 class HomeViewController: UITableViewController {
     
     //MARK: - Attributes
-//    var arrayMoedas = [
-//    "USD", "EUR", "ARS"
-//    ]
-//    var arrayPorcentagem = [
-//    "0,53%", "0%", "1,12%"
-//    ]
     
     
     let tableViewCell = TableViewCell()
@@ -30,9 +24,7 @@ class HomeViewController: UITableViewController {
           title = "Moedas"
         
         performRequest()
-        
-//        moedaManager.delegate = self
-//        moedaManager.performRequest()
+
     }
     
     //MARK: - TablewView DataSource
@@ -97,8 +89,6 @@ class HomeViewController: UITableViewController {
                     return
                 }
                 if let safeData = data {
-//                    let dataString = String(data: safeData, encoding: .utf8)
-//                    print(dataString as Any)
                     self.parseJSon(safeData)
                 }
             }
@@ -111,7 +101,6 @@ class HomeViewController: UITableViewController {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(MoedaData.self, from: moedaData)
-//            print(decodedData)
             
             moedas.append(decodedData.results.currencies.ARS)
             moedas.append(decodedData.results.currencies.AUD)

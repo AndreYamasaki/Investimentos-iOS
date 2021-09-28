@@ -10,7 +10,7 @@ import UIKit
 class CompraViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
-    @IBOutlet var homeButton: UIButton!
+    @IBOutlet var homeButton: CustomButton!
     
     var message: String?
     
@@ -20,8 +20,7 @@ class CompraViewController: UIViewController {
         
         title = "Comprar"
         
-        homeButton.layer.cornerRadius = 21
-        homeButton.layer.masksToBounds = true
+        homeButton.setLayer()
         
         label.text = message
     }
