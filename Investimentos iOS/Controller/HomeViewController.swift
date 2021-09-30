@@ -16,6 +16,7 @@ class HomeViewController: UITableViewController {
     let baseURL = "https://api.hgbrasil.com/finance"
     var moedas = [Price]()
     let currencyArray = ["ARS", "AUD", "BTC", "CAD", "CNY", "EUR", "GBP", "JPY", "USD"]
+    var distanciaCell: CGFloat = 24
         
 
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class HomeViewController: UITableViewController {
             cell.labelPercent.textColor = .white
         }
         
+//        cell.viewCell.setViewBorder()
         cell.viewCell.layer.borderWidth = 1
         cell.viewCell.layer.borderColor = UIColor.white.cgColor
         cell.viewCell.layer.cornerRadius = 10
@@ -68,7 +70,7 @@ class HomeViewController: UITableViewController {
     
     //espaçamento entre cada sessão
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 24
+        return distanciaCell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -101,6 +103,7 @@ class HomeViewController: UITableViewController {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(MoedaData.self, from: moedaData)
+
             
             moedas.append(decodedData.results.currencies.ARS)
             moedas.append(decodedData.results.currencies.AUD)

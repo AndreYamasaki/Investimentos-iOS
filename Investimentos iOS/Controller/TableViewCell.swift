@@ -11,7 +11,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet var labelCurrency: UILabel!
     @IBOutlet var labelPercent: UILabel!
-    @IBOutlet var viewCell: UIView!
+    @IBOutlet var viewCell: CustomView!
     
     
 

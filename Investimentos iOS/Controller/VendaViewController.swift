@@ -10,7 +10,7 @@ import UIKit
 class VendaViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
-    @IBOutlet var homeButton: UIButton!
+    @IBOutlet var homeButton: CustomButton!
     
     var message: String?
 
@@ -19,8 +19,9 @@ class VendaViewController: UIViewController {
         
         title = "Vender"
         
-        homeButton.layer.cornerRadius = 21
+//        homeButton.setLayer()
         homeButton.layer.masksToBounds = true
+        homeButton.layer.cornerRadius = 21
 
         label.text = message
     }

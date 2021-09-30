@@ -20,7 +20,9 @@ class CompraViewController: UIViewController {
         
         title = "Comprar"
         
-        homeButton.setLayer()
+//        homeButton.setLayer()
+        homeButton.layer.masksToBounds = true
+        homeButton.layer.cornerRadius = 21
         
         label.text = message
     }

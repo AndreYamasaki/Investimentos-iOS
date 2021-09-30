@@ -22,8 +22,8 @@ class CambioViewController: UIViewController {
     
     @IBOutlet var quantidadeTextField: UITextField!
     
-    @IBOutlet var venderOutlet: CustomButton!
-    @IBOutlet var comprarOutlet: CustomButton!
+    @IBOutlet var venderOutlet: UIButton!
+    @IBOutlet var comprarOutlet: UIButton!
     
     let formatter = NumberFormatter()
     var usuario = Usuario()
@@ -43,8 +43,11 @@ class CambioViewController: UIViewController {
         configurartextField() //borda e placeholder cinza, arredondados
         adicionarValores()
         
-        venderOutlet.setLayer()
-        comprarOutlet.setLayer()
+        venderOutlet.layer.cornerRadius = 21
+        venderOutlet.layer.masksToBounds = true
+        
+        comprarOutlet.layer.cornerRadius = 21
+        comprarOutlet.layer.masksToBounds = true
         
         testarBotao()
         
@@ -95,11 +98,12 @@ class CambioViewController: UIViewController {
     @IBAction func venderPressed(_ sender: UIButton) {
         
         textFieldDidEndEditing(quantidadeTextField)
-        guard let moedaVenda = moeda?.sell else { return }
         
-        guard let quantidadeVenda = quantidade else { return }
+        guard let moedaVenda = moeda?.sell, let quantidadeVenda = quantidade, let moedas = moedas else { return }
         
-        guard let moedas = moedas else { return }
+//        guard let quantidadeVenda = quantidade else { return }
+//
+//        guard let moedas = moedas else { return }
         
         let valorReal = moedaVenda * quantidadeVenda
         
@@ -108,14 +112,14 @@ class CambioViewController: UIViewController {
         saldoLabel.text = "Saldo Disponível: " + usuario.saldoString
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
         
-        if let vc = storyboard?.instantiateViewController(identifier: "venda") as? VendaViewController {
+        if let vendaViewController = storyboard?.instantiateViewController(identifier: "venda") as? VendaViewController {
             
             let valorString = String(format: "%.2f", valorReal)
-            vc.message = """
+            vendaViewController.message = """
                 Parabéns!
                 Você acabou de vender \(quantidadeVenda) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorString)
                 """
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vendaViewController, animated: true)
             
         }
         testarBotao()
@@ -139,14 +143,14 @@ class CambioViewController: UIViewController {
         saldoLabel.text = "Saldo Disponível: " + usuario.saldoString
         caixaLabel.text = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
         
-        if let vc = storyboard?.instantiateViewController(identifier: "compra") as? CompraViewController {
+        if let compraViewController = storyboard?.instantiateViewController(identifier: "compra") as? CompraViewController {
             
             let valorString = String(format: "%.2f", valorReal)
-            vc.message = """
+            compraViewController.message = """
                 Parabéns!
                 Você acabou de comprar \(quantidadeCompra) \(moedas) - \(moeda?.name ?? ""), totalizando R$\(valorString)
                 """
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(compraViewController, animated: true)
             
         }
         testarBotao()
@@ -160,15 +164,19 @@ class CambioViewController: UIViewController {
         guard let moedaCompra = moeda?.buy else { return }
         guard let moedaVenda = moeda?.sell else { return }
         if moedaCompra > usuario.saldo || usuario.saldo == 0 {
-            comprarOutlet.disableButton()
+            comprarOutlet.isEnabled = false
+            comprarOutlet.alpha = 0.5
         } else {
-            comprarOutlet.enableButton()
+            comprarOutlet.isEnabled = true
+            comprarOutlet.alpha = 1
         }
         
         if usuario.saldoMoeda[moedas!] == 0 || usuario.saldo < moedaVenda {
-            venderOutlet.disableButton()
+            venderOutlet.isEnabled = false
+            venderOutlet.alpha = 0.5
         } else {
-            venderOutlet.enableButton()
+            venderOutlet.isEnabled = true
+            venderOutlet.alpha = 1
         }
     }
 }
@@ -186,7 +194,7 @@ extension CambioViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != ""{
+        if textField.text != String(){
                     return true
                 } else {
                     textField.placeholder = "quantidade"
