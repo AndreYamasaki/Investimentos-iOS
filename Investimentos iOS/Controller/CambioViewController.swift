@@ -53,6 +53,8 @@ class CambioViewController: UIViewController {
         
         quantidadeTextField.delegate = self
         
+        configurarcAcessibilidade()
+        
         
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -95,6 +97,46 @@ class CambioViewController: UIViewController {
         quantidadeTextField.layer.masksToBounds = true
     }
     
+    func configurarcAcessibilidade() {
+        
+        guard let moeda = moeda else {return}
+        guard let moedas = moedas else {return}
+        
+        moedaLabel.accessibilityTraits = .header
+        moedaLabel.isAccessibilityElement = false
+        moedaLabel.accessibilityLabel = moedas + " - " + moeda.name
+        
+        compraLabel.accessibilityTraits = .header
+        compraLabel.isAccessibilityElement = false
+        compraLabel.accessibilityLabel = "Compra: " + moeda.buyString
+        
+        variacaoLabel.isAccessibilityElement = false
+        variacaoLabel.accessibilityTraits = .header
+        variacaoLabel.accessibilityLabel = String(moeda.variation) + "%"
+        
+        vendaLabel.accessibilityTraits = .header
+        vendaLabel.isAccessibilityElement = false
+        vendaLabel.accessibilityLabel = "Venda: " + moeda.sellString
+        
+        saldoLabel.isAccessibilityElement = false
+        saldoLabel.accessibilityTraits = .header
+        saldoLabel.accessibilityLabel = "Saldo disponível: R$\(usuario.saldo)"
+        
+        caixaLabel.isAccessibilityElement = false
+        caixaLabel.accessibilityTraits = .header
+        caixaLabel.accessibilityLabel = "\(usuario.saldoMoeda[moedas] ?? 0) \(moedas) em caixa"
+        
+        venderOutlet.isAccessibilityElement = true
+        venderOutlet.accessibilityLabel = "Botão vender"
+        
+        comprarOutlet.isAccessibilityElement = true
+        comprarOutlet.accessibilityLabel = "Botão comprar"
+        
+        
+        cambioView.isAccessibilityElement = true
+        cambioView.accessibilityLabel = "Tela de câmbio - " + moeda.name
+    }
+    
     @IBAction func venderPressed(_ sender: UIButton) {
         
         textFieldDidEndEditing(quantidadeTextField)
@@ -123,6 +165,7 @@ class CambioViewController: UIViewController {
             
         }
         testarBotao()
+        configurarcAcessibilidade()
         
     }
     
@@ -154,6 +197,7 @@ class CambioViewController: UIViewController {
             
         }
         testarBotao()
+        configurarcAcessibilidade()
     }
     
     
